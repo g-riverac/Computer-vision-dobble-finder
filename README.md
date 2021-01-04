@@ -11,7 +11,7 @@ Computer vision algorithm for the recognition of the matching figure between two
 
 The algorithm mainly uses the SIFT algorithm developed by David Lowe (https://www.cs.ubc.ca/~lowe/keypoints/) and the RANSAC method as a filter. The functions developed by PeterKovesi are used to filter outliners by RANSAC (https://www.peterkovesi.com/matlabfns/).
 
-A user interface was developed in which the comparison image can be obtained in two ways:
+A user interface (Programa_final.m) was developed in which the comparison image can be obtained in two ways:
   
   •	Connecting remotely via WIFI to a mobile camera with the IP_Webcam application.
   •	Loading an image from the database of letters generated during the development of the algorithm.
