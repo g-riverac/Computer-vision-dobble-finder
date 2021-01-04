@@ -1,18 +1,15 @@
 # Computer Vision Project
 
 Authors:
-    -Conesa Fernández, Daniel Fco
-    -De Luca, Francesco
-    -Díaz Pérez, Rodrigo
-    -Moreno Escudero, Germán
-    -Rivera Cardenas, Gabriel
+    Conesa Fernández, Daniel Fco
+    De Luca, Francesco
+    Díaz Pérez, Rodrigo
+    Moreno Escudero, Germán
+    Rivera Cardenas, Gabriel
 
 Computer vision algorithm for the recognition of the matching figure between two cards in the Dobble game.
 
-The algorithm mainly uses the SIFT algorithm developed by David Lowe and the RANSAC method as a filter. The functions developed by PeterKovesi are used to filter outliners by RANSAC.
-
-  https://www.peterkovesi.com/matlabfns/
-  https://www.cs.ubc.ca/~lowe/keypoints/
+The algorithm mainly uses the SIFT algorithm developed by David Lowe (https://www.cs.ubc.ca/~lowe/keypoints/) and the RANSAC method as a filter. The functions developed by PeterKovesi are used to filter outliners by RANSAC (https://www.peterkovesi.com/matlabfns/).
 
 A user interface was developed in which the comparison image can be obtained in two ways:
   
@@ -24,4 +21,5 @@ Finally, with the image loaded, you can proceed to compare the two cards.
 
 The images can be found at the following link: https://drive.google.com/drive/folders/13kqq4UGEHLgV42QO_86jxBNC3ix2UVX0?usp=sharing
 
+Universidad Politécnica de Madrid
 January 2021
