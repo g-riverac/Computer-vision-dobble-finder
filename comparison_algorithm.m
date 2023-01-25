@@ -3,8 +3,8 @@ clc
 clear
 close all
 
-imagen_pc1=imread('dobble_35.tiff');
-imagen_pc2=imread('dobble_46.tiff');
+imagen_pc1=imread('dobble_02.tiff');
+imagen_pc2=imread('dobble_03.tiff');
 I222= imagen_pc2;
 Irgb=I222;
 rt=0;
@@ -140,23 +140,14 @@ if size(indice_match,1)>1
 indice_match=find(r1(:)==max(r1));
  
 end
-
+indice_match=indice_match
 i_match=iconos{indice_match,1};
 imwrite(i_match,'match.tiff');
 
 %////////////////////
-[BW,maskedRGBImage] = createMask_verde(iconos{indice_match,1});
-verde=any(BW(:));
-[BW,maskedRGBImage] = createMask_rojo(iconos{indice_match,1});
-rojo=any(BW(:));
-[BW,maskedRGBImage] = createMask_celeste(iconos{indice_match,1});
-celeste=any(BW(:));
-[BW,maskedRGBImage] = createMask_amarillo(iconos{indice_match,1});
-amarillo=any(BW(:));
-[BW,maskedRGBImage] = createMask_morado(iconos{indice_match,1});
-morado=any(BW(:));
-[BW,maskedRGBImage] = createMask_naranja(iconos{indice_match,1});
-naranja=any(BW(:));
+[verde, rojo, celeste, amarillo, morado, naranja]=color_icono(iconos{indice_match,1});
+
+
 
 compara_verde=['01.tiff';'13.tiff';'17.tiff';'28.tiff';'42.tiff';'43.tiff';'53.tiff'];
 compara_verde2=[01,13,17,28,42,43,53];
