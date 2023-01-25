@@ -1,4 +1,4 @@
-function [color] = color_icono(icono)
+function [verde, rojo, celeste, amarillo, morado, naranja] = color_icono(icono)
 
     function [BW,maskedRGBImage] = createMask(RGB, channels_limits)
     %createMask  Threshold RGB image using auto-generated code from colorThresholder app.
@@ -61,5 +61,5 @@ function [color] = color_icono(icono)
     [BW,maskedRGBImage] = createMask(icono,channels_limits_naranja);
     naranja=any(BW(:));
     
-    color=[verde, rojo, celeste, amarillo, morado, naranja];
+    %color=[verde, rojo, celeste, amarillo, morado, naranja];
 end
