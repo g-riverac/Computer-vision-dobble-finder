@@ -3,8 +3,8 @@ clc
 clear
 close all
 
-imagen_pc1=imread('dobble_35.tiff');
-imagen_pc2=imread('dobble_46.tiff');
+imagen_pc1=imread('dobble_02.tiff');
+imagen_pc2=imread('dobble_03.tiff');
 I222= imagen_pc2;
 Irgb=I222;
 rt=0;
@@ -140,7 +140,7 @@ if size(indice_match,1)>1
 indice_match=find(r1(:)==max(r1));
  
 end
-
+indice_match=indice_match
 i_match=iconos{indice_match,1};
 imwrite(i_match,'match.tiff');
 
