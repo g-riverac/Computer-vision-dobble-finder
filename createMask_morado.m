@@ -11,19 +11,19 @@ function [BW,maskedRGBImage] = createMask_morado(RGB)
 
 
 % Convert RGB image to chosen color space
-I = rgb2hsv(RGB);
+%I = rgb2hsv(RGB);
 
 % Define thresholds for channel 1 based on histogram settings
-channel1Min = 0.015;
-channel1Max = 0.037;
-
+channel1Min = 69.000;
+channel1Max = 100.000;
+I=RGB
 % Define thresholds for channel 2 based on histogram settings
-channel2Min = 0.268;
-channel2Max = 0.355;
+channel2Min = 43.000;
+channel2Max = 66.000;
 
 % Define thresholds for channel 3 based on histogram settings
-channel3Min = 0.557;
-channel3Max = 0.652;
+channel3Min = 62.000;
+channel3Max = 100.000;
 
 % Create mask based on chosen histogram thresholds
 sliderBW = (I(:,:,1) >= channel1Min ) & (I(:,:,1) <= channel1Max) & ...

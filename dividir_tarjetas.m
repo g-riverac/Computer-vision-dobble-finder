@@ -13,10 +13,11 @@ figure;imshow(u2);
 % figure;imshow(uu);
 
 BW15=imbinarize(u2(:,:,1),.45);figure;imshow(BW15)
-[centersBright,radiiBright] = imfindcircles(BW15,[410 450],'ObjectPolarity','bright','Sensitivity',0.99);
+[centersBright,radiiBright] = imfindcircles(BW15,[395 445],'ObjectPolarity','bright','Sensitivity',0.99);
 % hBright = viscircles(centersBright, radiiBright,'Color','b');
 % figure;imshow(uu);
 % hBright = viscircles(centersBright, radiiBright,'Color','b');
+
 d = pdist(centersBright,'euclidean')
 d2=d/2
 out = (centersBright(1,:) + centersBright(2,:))./2

@@ -11,19 +11,20 @@ function [BW,maskedRGBImage] = createMask_naranja(RGB)
 
 
 % Convert RGB image to chosen color space
-I = rgb2hsv(RGB);
+%I = rgb2hsv(RGB);
+I=RGB;
 
 % Define thresholds for channel 1 based on histogram settings
-channel1Min = 0.075;
-channel1Max = 0.118;
+channel1Min = 92.000;
+channel1Max = 139.000;
 
 % Define thresholds for channel 2 based on histogram settings
-channel2Min = 0.533;
-channel2Max = 0.666;
+channel2Min = 26.000;
+channel2Max = 75.000;
 
 % Define thresholds for channel 3 based on histogram settings
-channel3Min = 0.791;
-channel3Max = 0.885;
+channel3Min = 14.000;
+channel3Max = 46.000;
 
 % Create mask based on chosen histogram thresholds
 sliderBW = (I(:,:,1) >= channel1Min ) & (I(:,:,1) <= channel1Max) & ...
