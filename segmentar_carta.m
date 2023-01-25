@@ -10,11 +10,21 @@ I222=ycbcr2rgb(I333);
 BW12=imbinarize(I333(:,:,1),.85);imshow(BW12);
 
 % [centersBright,radiiBright] = imfindcircles(BW12,[350 400],'ObjectPolarity','bright','Sensitivity',0.99);
-[centersBright,radiiBright] = imfindcircles(BW12,[410 430],'ObjectPolarity','bright','Sensitivity',0.99);
+[centersBright,radiiBright] = imfindcircles(BW12,[395 420],'ObjectPolarity','bright','Sensitivity',0.99)
+
+umbral=5;
+while ~any(centersBright)
+    
+    [centersBright,radiiBright] = imfindcircles(BW12,[405 420+umbral],'ObjectPolarity','bright','Sensitivity',0.99)
+    umbral=umbral+5;
+end
 
 imshow(I222);
 hBright = viscircles(centersBright, radiiBright,'Color','b');
-carta_original = I111((round(centersBright(1,2))-round(radiiBright)):(round(centersBright(1,2))+round(radiiBright)),(round(centersBright(1,1))-round(radiiBright)):(round(centersBright(1,1))+round(radiiBright)),:);
+
+lim_a=(round(centersBright(1,2))-round(radiiBright));
+lim_b=(round(centersBright(1,2))+round(radiiBright));
+carta_original = I111(lim_a:lim_b,(round(centersBright(1,1))-round(radiiBright)):(round(centersBright(1,1))+round(radiiBright)),:);
 
 carta= I222((round(centersBright(1,2))-round(radiiBright)):(round(centersBright(1,2))+round(radiiBright)),(round(centersBright(1,1))-round(radiiBright)):(round(centersBright(1,1))+round(radiiBright)),:);
 
@@ -26,7 +36,7 @@ carta= I222((round(centersBright(1,2))-round(radiiBright)):(round(centersBright(
   % Next create the circle in the image.
   I444=rgb2ycbcr(carta_original);
   BW13=imbinarize(I444(:,:,1),.45);imshow(BW13);
-  [centersBright2,radiiBright2] = imfindcircles(BW13,[410 430],'ObjectPolarity','bright','Sensitivity',0.99);
+  [centersBright2,radiiBright2] = imfindcircles(BW13,[380 450],'ObjectPolarity','bright','Sensitivity',0.99)
 %   [centersBright2,radiiBright2] = imfindcircles(BW13,[350 400],'ObjectPolarity','bright','Sensitivity',0.99);
 
   centerX = centersBright2(1, 1);

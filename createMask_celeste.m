@@ -11,19 +11,20 @@ function [BW,maskedRGBImage] = createMask_celeste(RGB)
 
 
 % Convert RGB image to chosen color space
-I = rgb2hsv(RGB);
+%I = rgb2hsv(RGB);
+I=RGB;
 
 % Define thresholds for channel 1 based on histogram settings
-channel1Min = 0.187;
-channel1Max = 0.279;
+channel1Min = 20.000;
+channel1Max = 75.000;
 
 % Define thresholds for channel 2 based on histogram settings
-channel2Min = 0.045;
-channel2Max = 0.108;
+channel2Min = 77.000;
+channel2Max = 116.000;
 
 % Define thresholds for channel 3 based on histogram settings
-channel3Min = 0.498;
-channel3Max = 0.610;
+channel3Min = 114.000;
+channel3Max = 151.000;
 
 % Create mask based on chosen histogram thresholds
 sliderBW = (I(:,:,1) >= channel1Min ) & (I(:,:,1) <= channel1Max) & ...

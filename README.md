@@ -24,5 +24,9 @@ Finally, with the image loaded, you can proceed to compare the two cards.
 
 The images can be found at the following link: https://drive.google.com/drive/folders/13kqq4UGEHLgV42QO_86jxBNC3ix2UVX0?usp=sharing
 
+## Requeriments
+
+Statistics and Machine Learning Toolbox 
+
 ## Universidad Politécnica de Madrid
 **MUAR, January 2021**
