@@ -7,7 +7,7 @@ imagen_pc1=imread('dobble_02.tiff');
 imagen_pc2=imread('dobble_03.tiff');
 I222= imagen_pc2;
 Irgb=I222;
-rt=0;
+rt=0;   
 
 [iconos, carta1, Mask_m] = extraer_iconos(imagen_pc1,0.70,5);
 [iconos2, carta2, Mask_m2] = extraer_iconos(imagen_pc2,0.70,5);
