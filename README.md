@@ -26,7 +26,8 @@ The images can be found at the following link: https://drive.google.com/drive/fo
 
 ## Requeriments
 
-Statistics and Machine Learning Toolbox 
+* Statistics and Machine Learning Toolbox 
+* Phased Array System Toolbox
 
 ## Universidad Politécnica de Madrid
 **MUAR, January 2021**
