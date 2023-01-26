@@ -26,8 +26,8 @@ end
 
 d = pdist(centersBright,'euclidean');
 d2=d/2;
-%out = (centersBright(1,:) + centersBright(2,:))./2;
-out = (centersBright(1,:) )./2;
+out = (centersBright(1,:) + centersBright(2,:))./2;
+%out = (centersBright(1,:) )./2;
 
 uu2=B(:,round(out(1,1)):end,:);
 figure;imshow(uu2);

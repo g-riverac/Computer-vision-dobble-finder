@@ -2,3 +2,7 @@
 *.tiff
 
 sift_1/
+
+tmp.key
+
+tmp.pgm

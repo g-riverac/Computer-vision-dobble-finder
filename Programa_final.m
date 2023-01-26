@@ -307,7 +307,7 @@ global guardar1 guardar2 ra1 Irgb Mask_m iconos
 guardar1=1;
 set(handles.pushbutton3,'Enable','off')
 
-[Irgb,Mask_m,Mask_m2,iconos,iconos2,carta1,carta2] = preprocesar(ra1);
+[Irgb,Mask_m,Mask_m2,iconos,iconos2,carta1,carta2] = preprocesar(ra1,2);
 imshow(carta1,'Parent', handles.axes4)
 imshow(carta2,'Parent', handles.axes7)
 if (guardar1==1 )
@@ -455,7 +455,7 @@ h.Visible = 'off';
 set(handles.pushbutton8,'Enable','off')
 % set(handles.pushbutton9,'Enable','on')
 
-[Irgb,Mask_m,Mask_m2,iconos,iconos2,carta1,carta2] = preprocesar(ra1);
+[Irgb,Mask_m,Mask_m2,iconos,iconos2,carta1,carta2] = preprocesar(ra1,2);
 imshow(carta1,'Parent', handles.axes4)
 imshow(carta2,'Parent', handles.axes7)
 if (cargar1==1 )
