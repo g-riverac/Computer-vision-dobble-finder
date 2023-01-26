@@ -17,6 +17,9 @@ while ~any(centersBright)
     
     [centersBright,radiiBright] = imfindcircles(BW12,[405 420+umbral],'ObjectPolarity','bright','Sensitivity',0.99)
     umbral=umbral+5;
+    if umbral>=50
+        break
+    end
 end
 
 imshow(I222);
