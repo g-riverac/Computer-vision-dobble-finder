@@ -307,8 +307,8 @@ end
             figure;imshow(compara(indice2,:)); 
             nom=Nombres(indice2,:);
         end
-        
-        resultado_comparacion=imread(compara(indice2,:));
+        result_icon=compara(indice2,:);
+        resultado_comparacion=imread(result_icon(1,:));
 %         figure;imshow(resultado_comparacion);
         Etiqueta=nom;
 
