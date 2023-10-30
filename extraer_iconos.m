@@ -6,11 +6,11 @@ t=2;
 centroids=0;
 
 while(size(centroids,1)<8)
-BW15=imbinarize(Iycbcr(:,:,1),umbral);figure;imshow(BW15)
-nn=imcomplement(BW15);figure;imshow(nn);
+BW15=imbinarize(Iycbcr(:,:,1),umbral);figure;%imshow(BW15)
+nn=imcomplement(BW15);figure;%imshow(nn);
 % se = strel('line',4,180);
 se = strel('sphere',valor);
-BW20 = imdilate(nn,se); figure;imshow(BW20), title('Original')
+BW20 = imdilate(nn,se); figure;%imshow(BW20), title('Original')
 BW2 = imfill(BW20,'holes');
 s = regionprops(BW2,'centroid','MajorAxisLength','MinorAxisLength','BoundingBox','Orientation');
 centroids = cat(1,s.Centroid);
@@ -32,7 +32,7 @@ end
 [m1,sn]=sort(bn,'descend');
 
 w=sn(1:8,:);
-imshow(BW2); hold on ;plot(centroids(:,1),centroids(:,2),'b*') ;hold off
+%imshow(BW2); hold on ;plot(centroids(:,1),centroids(:,2),'b*') ;hold off
 
 % return
 iconos = cell(size(w,1));

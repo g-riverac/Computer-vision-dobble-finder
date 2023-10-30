@@ -1,4 +1,4 @@
-function [resultado_comparacion,Etiqueta] = comparar(carta1,carta2,Mask_m,Mask_m2,iconos,iconos2)
+function [resultado_comparacion,Etiqueta,i_match] = comparar(carta1,carta2,Mask_m,Mask_m2,iconos,iconos2)
 
 umbral_sift1=0.55; %Mientras más alto el porcentaje, aumenta el numero de puntos cazados
 umbral_filtro=0.95;
