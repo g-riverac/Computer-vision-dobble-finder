@@ -26,9 +26,9 @@ status=true;
 status(inliers)=1;
 status=status';
 
-figure;
-showMatchedFeatures(im1, im2, puntosMatch1(status,:),puntosMatch2(status,:),'montage','PlotOptions',{'ro','co','g'});
-title('Mapa de disparidad entre con filtro RANSAC');
+%figure;
+%showMatchedFeatures(im1, im2, puntosMatch1(status,:),puntosMatch2(status,:),'montage','PlotOptions',{'ro','co','g'});
+%title('Mapa de disparidad entre con filtro RANSAC');
 end
 if(num<8)
     status=true(size(puntosMatch1,1),1);

@@ -6,11 +6,11 @@ t=2;
 centroids=0;
 
 while(size(centroids,1)<8)
-BW15=imbinarize(Iycbcr(:,:,1),umbral);figure;%imshow(BW15)
-nn=imcomplement(BW15);figure;%imshow(nn);
+BW15=imbinarize(Iycbcr(:,:,1),umbral);%figure;imshow(BW15)
+nn=imcomplement(BW15);%figure;imshow(nn);
 % se = strel('line',4,180);
 se = strel('sphere',valor);
-BW20 = imdilate(nn,se); figure;%imshow(BW20), title('Original')
+BW20 = imdilate(nn,se); %figure;imshow(BW20), title('Original')
 BW2 = imfill(BW20,'holes');
 s = regionprops(BW2,'centroid','MajorAxisLength','MinorAxisLength','BoundingBox','Orientation');
 centroids = cat(1,s.Centroid);
@@ -48,13 +48,13 @@ end
 mask2 = imfill(po,'holes');
 
 Mask_m(:,:,k)=mask2;
-figure;imshow(mask2);
+%figure;imshow(mask2);
 maskedRgbImage3 = bsxfun(@times, carta_original, cast(mask2, 'like', carta_original));
 
 [croppedImage] = recortar_zi(maskedRgbImage3, 0.2,0);
 iconos{k,1}=croppedImage ;
 
-figure;imshow(croppedImage);
+%figure;imshow(croppedImage);
 
 end
 

@@ -1,7 +1,7 @@
 function [resultado_comparacion,Etiqueta] = get_label(indice_match,i_match,iconos)
 rt=0;
 
-[verde, rojo, celeste, amarillo, morado, naranja] = color_icono(iconos{indice_match,1})
+[verde, rojo, celeste, amarillo, morado, naranja] = color_icono(iconos{indice_match,1});
 
 compara_verde=['01.tiff';'13.tiff';'17.tiff';'28.tiff';'42.tiff';'43.tiff';'53.tiff'];
 compara_verde2=[01,13,17,28,42,43,53];
@@ -100,9 +100,9 @@ puntosMatch2_ic=puntosMatch_ic(:,3:4);
             status_ic=true;
             status_ic(inliers)=1;
             status_ic=status_ic';
-            figure;
-            showMatchedFeatures(im1, im2, puntosMatch1_ic(status_ic,:),puntosMatch2_ic(status_ic,:),'montage','PlotOptions',{'ro','co','g'});
-            title('Mapa de disparidad entre con filtro RANSAC');
+            %figure;
+            %showMatchedFeatures(im1, im2, puntosMatch1_ic(status_ic,:),puntosMatch2_ic(status_ic,:),'montage','PlotOptions',{'ro','co','g'});
+            %title('Mapa de disparidad entre con filtro RANSAC');
         end
         if(num2<=4)
             status_ic=true(size(puntosMatch1_ic,1),1);
@@ -131,11 +131,11 @@ end
        if size(indice2,1)>1
 
             [confront, ind_conf]=confirmation2(compara,indice2,cell_puntosMatch_indice2,i_match);
-            figure;imshow(compara(indice2(ind_conf,:),:));
+            %figure;imshow(compara(indice2(ind_conf,:),:));
             nom=Nombres(indice2(ind_conf,:),:);
 
        else
-            figure;imshow(compara(indice2,:)); 
+            %figure;imshow(compara(indice2,:)); 
             nom=Nombres(indice2,:);
         end
         result_icon=compara(indice2,:);

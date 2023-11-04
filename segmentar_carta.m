@@ -7,23 +7,23 @@ I333(:,:,1)=J;
 I222=ycbcr2rgb(I333);
 % I222=rgb2gray(I222);
 %/////////////////////////////////////////////////
-BW12=imbinarize(I333(:,:,1),.85);imshow(BW12);
+BW12=imbinarize(I333(:,:,1),.85);%imshow(BW12);
 
 % [centersBright,radiiBright] = imfindcircles(BW12,[350 400],'ObjectPolarity','bright','Sensitivity',0.99);
-[centersBright,radiiBright] = imfindcircles(BW12,[395 420],'ObjectPolarity','bright','Sensitivity',0.99)
+[centersBright,radiiBright] = imfindcircles(BW12,[395 420],'ObjectPolarity','bright','Sensitivity',0.99);
 
 umbral=5;
 while ~any(centersBright)
     
-    [centersBright,radiiBright] = imfindcircles(BW12,[405 420+umbral],'ObjectPolarity','bright','Sensitivity',0.99)
+    [centersBright,radiiBright] = imfindcircles(BW12,[405 420+umbral],'ObjectPolarity','bright','Sensitivity',0.99);
     umbral=umbral+5;
     if umbral>=50
         break
     end
 end
 
-imshow(I222);
-hBright = viscircles(centersBright, radiiBright,'Color','b');
+%imshow(I222);
+%hBright = viscircles(centersBright, radiiBright,'Color','b');
 
 lim_a=(round(centersBright(1,2))-round(radiiBright));
 lim_b=(round(centersBright(1,2))+round(radiiBright));
@@ -38,8 +38,8 @@ carta= I222((round(centersBright(1,2))-round(radiiBright)):(round(centersBright(
   [columnsInImage,rowsInImage] = meshgrid(1:size(carta_original,2), 1:size(carta_original,1));
   % Next create the circle in the image.
   I444=rgb2ycbcr(carta_original);
-  BW13=imbinarize(I444(:,:,1),.45);imshow(BW13);
-  [centersBright2,radiiBright2] = imfindcircles(BW13,[380 450],'ObjectPolarity','bright','Sensitivity',0.99)
+  BW13=imbinarize(I444(:,:,1),.45);%imshow(BW13);
+  [centersBright2,radiiBright2] = imfindcircles(BW13,[380 450],'ObjectPolarity','bright','Sensitivity',0.99);
 %   [centersBright2,radiiBright2] = imfindcircles(BW13,[350 400],'ObjectPolarity','bright','Sensitivity',0.99);
 
   centerX = centersBright2(1, 1);
@@ -52,12 +52,12 @@ carta= I222((round(centersBright(1,2))-round(radiiBright)):(round(centersBright(
 
   mask(circlePixels) = true;
   
-figure;imshow(mask);
-  hBright2 = viscircles(centersBright2, radiiBright2,'Color','b');
+%figure;imshow(mask);
+  %hBright2 = viscircles(centersBright2, radiiBright2,'Color','b');
 
 maskedRgbImage = bsxfun(@times, carta, cast(mask, 'like', carta));
 % carta=bsxfun(@times, I111, cast(mask, 'like', I111));
-figure;imshow(maskedRgbImage);
+%figure;imshow(maskedRgbImage);
  mask2= 255.*uint8(mask);
  
 % [carta_segmentar] = recortar_zi(maskedRgbImage, 0.2,1);
@@ -74,5 +74,5 @@ maskedBlue(logical(n)) = 255;
 maskedRgbImage4 = cat(3, maskedRed, maskedGreen, maskedBlue);
 Irgb=maskedRgbImage4;
 Iycbcr=rgb2ycbcr(maskedRgbImage4);
-figure;imshow(carta_original);
+%figure;imshow(carta_original);
 
