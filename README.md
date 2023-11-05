@@ -15,14 +15,12 @@ The algorithm mainly uses the SIFT algorithm developed by [David Lowe](https://w
 
 ## User interface
 
-A user interface (Programa_final.m) was developed in which the comparison image can be obtained in two ways:
+A user interface (Dobble_compare_only.mlapp) was developed in which the comparison image can be obtained in two ways:
 * Connecting remotely via WIFI to a mobile camera with the IP_Webcam application.
-* Loading an image from the database of letters generated during the development of the algorithm.
+* Loads an image generated during the algorithm development and performs the comparison between cards.
 
 Once the image is loaded you should use the save button if an image has been captured by the camera or use the load image button if an image has been selected from the database.
 Finally, with the image loaded, you can proceed to compare the two cards.
-
-The images can be found at the following link: https://drive.google.com/drive/folders/13kqq4UGEHLgV42QO_86jxBNC3ix2UVX0?usp=sharing
 
 ## Requeriments
 
