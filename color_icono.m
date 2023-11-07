@@ -12,8 +12,8 @@ function [verde, rojo, celeste, amarillo, morado, naranja] = color_icono(icono)
     %------------------------------------------------------
 
     % Convert RGB image to chosen color space
-    %I = rgb2hsv(RGB);
-    I=RGB;
+    I = rgb2hsv(RGB);
+    %I=RGB;
 
     % Define thresholds for channel 1 based on histogram settings
     channel1Min = channels_limits(1);
@@ -40,26 +40,41 @@ function [verde, rojo, celeste, amarillo, morado, naranja] = color_icono(icono)
     maskedRGBImage(repmat(~BW,[1 1 3])) = 0;
 
     end
+% para RGB
+channels_limits_verde=[34.000 65.000 62.000 100.000 16.000 46.000];
+channels_limits_rojo=[97.000 130.000 8.000 45.000 12.000 50.000];
+channels_limits_celeste=[20.000 75.000 77.000 116.000 114.000 151.000];
+channels_limits_amarillo=[112.000 138.000 88.000 122.000 21.000 66.000];    
+channels_limits_morado=[69.000 100.000 43.000 66.000 62.000 100.000];
+channels_limits_naranja=[92.000 139.000 26.000 75.000 14.000 46.000];
 
-    channels_limits_verde=[34.000 65.000 62.000 100.000 16.000 46.000];
-    channels_limits_rojo=[97.000 130.000 8.000 45.000 12.000 50.000];
-    channels_limits_celeste=[20.000 75.000 77.000 116.000 114.000 151.000];
-    channels_limits_amarillo=[112.000 138.000 88.000 122.000 21.000 66.000];    
-    channels_limits_morado=[69.000 100.000 43.000 66.000 62.000 100.000];
-    channels_limits_naranja=[92.000 139.000 26.000 75.000 14.000 46.000];
+% % para HSV
+% channels_limits_verde=[0.264,0.360,0.230,0.610,0.124,0.415];
+% channels_limits_rojo=[0.979, 0.000, 0.648, 0.794, 0.470, 0.509];
+% channels_limits_celeste=[0.556,0.615,0.408,0.568,0.415,0.638];
+% channels_limits_amarillo=[112.000 138.000 88.000 122.000 21.000 66.000];    
+% channels_limits_morado=[69.000 100.000 43.000 66.000 62.000 100.000];
+% channels_limits_naranja=[92.000 139.000 26.000 75.000 14.000 46.000];
 
-    [BW,maskedRGBImage] = createMask(icono,channels_limits_verde);
-    verde=any(BW(:));
-    [BW,maskedRGBImage] = createMask(icono,channels_limits_rojo);
-    rojo=any(BW(:));
-    [BW,maskedRGBImage] = createMask(icono,channels_limits_celeste);
-    celeste=any(BW(:));
-    [BW,maskedRGBImage] = createMask(icono,channels_limits_amarillo);
-    amarillo=any(BW(:));
-    [BW,maskedRGBImage] = createMask(icono,channels_limits_morado);
-    morado=any(BW(:));
-    [BW,maskedRGBImage] = createMask(icono,channels_limits_naranja);
-    naranja=any(BW(:));
-    
-    %color=[verde, rojo, celeste, amarillo, morado, naranja];
+
+
+[BW,maskedRGBImage] = createMask(icono,channels_limits_verde);
+verde=any(BW(:));
+
+[BW,maskedRGBImage] = createMask(icono,channels_limits_rojo);
+rojo=any(BW(:));
+
+[BW,maskedRGBImage] = createMask(icono,channels_limits_celeste);
+celeste=any(BW(:));
+
+[BW,maskedRGBImage] = createMask(icono,channels_limits_amarillo);
+amarillo=any(BW(:));
+
+[BW,maskedRGBImage] = createMask(icono,channels_limits_morado);
+morado=any(BW(:));
+
+[BW,maskedRGBImage] = createMask(icono,channels_limits_naranja);
+naranja=any(BW(:));
+
+%color=[verde, rojo, celeste, amarillo, morado, naranja];
 end

@@ -26,52 +26,52 @@ load('Dataset_names.mat');
 compara=[];
 
 if(verde==1&&naranja==0)
-compara=compara_verde;
-compara2=compara_verde2;
-my_im_cell=my_im_cell_verde;
-Nombres=Nombres_verde;
+    compara=compara_verde;
+    compara2=compara_verde2;
+    my_im_cell=my_im_cell_verde;
+    Nombres=Nombres_verde;
 end
 
 if(naranja==1&&verde==0)
-compara=compara_naranja;
-compara2=compara_naranja2;
-my_im_cell=my_im_cell_naranja;
-Nombres=Nombres_naranja;
+    compara=compara_naranja;
+    compara2=compara_naranja2;
+    my_im_cell=my_im_cell_naranja;
+    Nombres=Nombres_naranja;
 end
 
 if(verde==1&&naranja==1)
-compara=compara_verde_naranja;
-compara2=compara_verde_naranja2;
-my_im_cell=my_im_cell_verde_naranja;
-Nombres=Nombres_verde_naranja;
+    compara=compara_verde_naranja;
+    compara2=compara_verde_naranja2;
+    my_im_cell=my_im_cell_verde_naranja;
+    Nombres=Nombres_verde_naranja;
 end
 
 if(morado==1)
-compara=compara_morado;
-compara2=compara_morado2;
-my_im_cell=my_im_cell_morado;
-Nombres=Nombres_morado;
+    compara=compara_morado;
+    compara2=compara_morado2;
+    my_im_cell=my_im_cell_morado;
+    Nombres=Nombres_morado;
 end
 
 if(amarillo==1)
-compara=compara_amarillo;
-compara2=compara_amarillo2;
-my_im_cell=my_im_cell_amarillo;
-Nombres=Nombres_amarillo;
+    compara=compara_amarillo;
+    compara2=compara_amarillo2;
+    my_im_cell=my_im_cell_amarillo;
+    Nombres=Nombres_amarillo;
 end
 
 if(celeste==1)
-compara=compara_celeste;
-compara2=compara_celeste2;
-my_im_cell=my_im_cell_celeste;
-Nombres=Nombres_celeste;
+    compara=compara_celeste;
+    compara2=compara_celeste2;
+    my_im_cell=my_im_cell_celeste;
+    Nombres=Nombres_celeste;
 end
 
 if(rojo==1)
-compara=compara_rojo;
-compara2=compara_rojo2;
-my_im_cell=my_im_cell_rojo;
-Nombres=Nombres_rojo;
+    compara=compara_rojo;
+    compara2=compara_rojo2;
+    my_im_cell=my_im_cell_rojo;
+    Nombres=Nombres_rojo;
 end
 
 if(rojo==0&&celeste==0&&morado==0&&naranja==0&&amarillo==0&&verde==0)
@@ -80,6 +80,7 @@ if(rojo==0&&celeste==0&&morado==0&&naranja==0&&amarillo==0&&verde==0)
     my_im_cell=my_im_cell_negro;
     Nombres=Nombres_negro;
 end
+
 N = size(compara,1);
 cell_puntosMatch_indice2 = cell(N,2);
 

@@ -1,6 +1,6 @@
 function [iconos,carta_original,Mask_m] = extraer_iconos(imagen,umbral,valor)
 
-[Irgb,Iycbcr,carta_original]=segmentar_carta(imagen);
+[Iycbcr,carta_original]=segmentar_carta(imagen);
 
 t=2;
 centroids=0;
@@ -8,7 +8,6 @@ centroids=0;
 while(size(centroids,1)<8)
 BW15=imbinarize(Iycbcr(:,:,1),umbral);%figure;imshow(BW15)
 nn=imcomplement(BW15);%figure;imshow(nn);
-% se = strel('line',4,180);
 se = strel('sphere',valor);
 BW20 = imdilate(nn,se); %figure;imshow(BW20), title('Original')
 BW2 = imfill(BW20,'holes');
