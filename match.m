@@ -33,7 +33,7 @@ function [puntosMatch,im1,im2] = match(umbral,representaImagen, image1, image2,u
 % distRatio: Only keep matches in which the ratio of vector angles from the
 %   nearest to second nearest neighbor is less than distRatio.
 distRatio = umbral;   
-
+match=[];
 % For each descriptor in the first image, select its match to second image.
 des2t = des2';                          % Precompute matrix transpose
 for i = 1 : size(des1,1)
