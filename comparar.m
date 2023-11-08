@@ -1,7 +1,7 @@
 function [i_match,indice_match] = comparar(carta1,carta2,Mask_m,Mask_m2,iconos,iconos2)
 
-umbral_sift1=0.60; %Mientras más alto el porcentaje, aumenta el numero de puntos cazados
-umbral_filtro=0.90;
+umbral_sift1=0.55; %Mientras más alto el porcentaje, aumenta el numero de puntos cazados
+umbral_filtro=0.95;
 num=0;
 
 while (num<3)
@@ -25,9 +25,9 @@ while (num<3)
         status(inliers)=1;
         status=status';
 
-        %figure;
-        %showMatchedFeatures(im1, im2, puntosMatch1(status,:),puntosMatch2(status,:),'montage','PlotOptions',{'ro','co','g'});
-        %title('Mapa de disparidad entre con filtro RANSAC');
+        figure;
+        showMatchedFeatures(im1, im2, puntosMatch1(status,:),puntosMatch2(status,:),'montage','PlotOptions',{'ro','co','g'});
+        title('Mapa de disparidad entre con filtro RANSAC');
     end
     if(num<8)
         status=true(size(puntosMatch1,1),1);
@@ -125,13 +125,34 @@ for k7=1:size(col,1)
     result1(k7)=isequal(colores1(k7,:),colores2(k7,:));
 end   
 
+i_match1=iconos{indice_match,1};
+i_match2=iconos2{indice_match2,1};
+imwrite(i_match1,'i_match.tiff');
+imwrite(i_match2,'i_match2.tiff');
+
+result1
+colores1
+colores2
 indice_match=row(result1);   
 
 if size(indice_match,1)>1
     indice_match=find(r1(:)==max(r1));
 end
 
-i_match=iconos{indice_match,1};
-imwrite(i_match,'match.tiff');
+if result1
+    i_match=iconos{indice_match,1};
+    imwrite(i_match,'match.tiff');
+else
+    if any( colores1)
+        i_match=i_match1; 
+        indice_match=find(r1(:)==max(r1));
+    end
+    if any( colores2)
+        i_match=i_match1;       
+        indice_match=find(r1(:)==max(r1));        
+    end
+end
+
+
 
 

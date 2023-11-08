@@ -1,7 +1,13 @@
 function [resultado_comparacion,Etiqueta] = get_label(indice_match,i_match,iconos)
 rt=0;
 
-[verde, rojo, celeste, amarillo, morado, naranja] = color_icono(iconos{indice_match,1});
+color = color_icono(iconos{indice_match,1});
+verde =color(1);
+rojo =color(2);
+celeste =color(3);
+amarillo =color(4);
+morado =color(5);
+naranja =color(6);
 
 compara_verde=['01.tiff';'13.tiff';'17.tiff';'28.tiff';'42.tiff';'43.tiff';'53.tiff'];
 compara_verde2=[01,13,17,28,42,43,53];

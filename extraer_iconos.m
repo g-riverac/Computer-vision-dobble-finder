@@ -6,18 +6,18 @@ t=2;
 centroids=0;
 
 while(size(centroids,1)<8)
-BW15=imbinarize(Iycbcr(:,:,1),umbral);%figure;imshow(BW15)
-nn=imcomplement(BW15);%figure;imshow(nn);
-se = strel('sphere',valor);
-BW20 = imdilate(nn,se); %figure;imshow(BW20), title('Original')
-BW2 = imfill(BW20,'holes');
-s = regionprops(BW2,'centroid','MajorAxisLength','MinorAxisLength','BoundingBox','Orientation');
-centroids = cat(1,s.Centroid);
+    BW15=imbinarize(Iycbcr(:,:,1),umbral);%figure;imshow(BW15)
+    nn=imcomplement(BW15);%figure;imshow(nn);
+    se = strel('sphere',valor);
+    BW20 = imdilate(nn,se); %figure;imshow(BW20), title('Original')
+    BW2 = imfill(BW20,'holes');
+    s = regionprops(BW2,'centroid','MajorAxisLength','MinorAxisLength','BoundingBox','Orientation');
+    centroids = cat(1,s.Centroid);
 
- if (size(centroids,1)<8)
-        umbral=umbral-0.01;
-        valor=valor-1;
- end
+     if (size(centroids,1)<8)
+            umbral=umbral-0.01;
+            valor=valor-1;
+     end
 
 end
 
@@ -25,7 +25,7 @@ b=bwboundaries(BW2);
 
 
 for r2=1:size(b)
-bn(r2,1)=(size(b{r2},1));
+    bn(r2,1)=(size(b{r2},1));
 end
 
 [m1,sn]=sort(bn,'descend');

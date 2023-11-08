@@ -17,7 +17,8 @@ end
 
 out = (centersBright(1,:) + centersBright(2,:))./2;
 
-uu2=image(:,round(out(1,1)):end,:);
-uu1=image(:,1:round(out(1,1)),:);
+[uu2] = normalize_image(image(:,round(out(1,1)):end,:));
+[uu1] = normalize_image(image(:,1:round(out(1,1)),:));
+
 %figure;imshow(uu2);
 %figure;imshow(uu1);

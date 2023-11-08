@@ -22,8 +22,8 @@ function [puntosMatch,im1,im2] = match(umbral,representaImagen, image1, image2,u
 
 
 % Find SIFT keypoints for each image
-[im1, des1, loc1] = sift(image1,umbral_filtro);
-[im2, des2, loc2] = sift(image2,umbral_filtro);
+[im1, des1, loc1] = sift(imgaussfilt(image1,1),umbral_filtro);
+[im2, des2, loc2] = sift(imgaussfilt(image2,1),umbral_filtro);
 
 % For efficiency in Matlab, it is cheaper to compute dot products between
 %  unit vectors rather than Euclidean distances.  Note that the ratio of 
